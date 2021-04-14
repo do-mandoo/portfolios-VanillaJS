@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="./cart.css" />
+  </head>
+  <body>
+    <h1 class="title">shopping Cart</h1>
+    <main class="container">
+      <button class="goListPage">목록으로 가기</button>
+      <section class="listContainer">
+        <h2 class="a11yHidden">장바구니 구현</h2>
+        <ul class="lists">
+          <!-- list 생성 -->
+          <button class="allSelect">전체선택</button>
+          <button class="allDelete">전체삭제</button>
+          <li class="eachItemList">
+            <input type="checkbox" class="itemCheckBox" checked="false" />
+            <span>사진1</span>
+            <span>수량3개</span>
+            <span>가격100원</span>
+            <button class="cartItemDel">삭제</button>
+          </li>
+          <li class="eachItemList">
+            <input type="checkbox" />
+            <span>사진2</span>
+            <span>수량2개</span>
+            <span>가격200원</span>
+            <button class="cartItemDel">삭제</button>
+          </li>
+          <li class="eachItemList">
+            <input type="checkbox" />
+            <span>사진3</span>
+            <span>수량1개</span>
+            <span>가격300원</span>
+            <button class="cartItemDel">삭제</button>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <span>총 주문 금액</span>
+        <span class="totlaCost">xx,xxx</span>
+      </section>
+    </main>
+    <script src="cart.js"></script>
+  </body>
+</html>

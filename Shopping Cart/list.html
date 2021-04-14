@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="./list.css" />
+  </head>
+    <h1 class="title">shopping lists</h1>
+    <main class="container">
+      <button class="goCartPage">장바구니로 가기</button>
+      <section>
+        <h2 class="a11yHidden">상품들</h2>
+        <ul class="lists">
+          <li id="1" class="item">
+            <div class="itemContainer">
+              <img class="img" src="./img/kenya케냐원두.jpg" alt="케냐원두" />
+              <div class="itemInfo">
+                <span>Kenya</span>
+                <p>케냐 원두 250g</p>
+                <p>
+                  열대성 과일의 향기와 신비로움으로 깔끔한 주스와 같은 느낌으
+                  가진 커피
+                </p>
+              </div>
+            </div>
+            <div class="upDownBtn">
+              <button class="downBtn">-</button>
+              <span class="countNum">1</span>
+              <button class="upBtn">+</button>
+            </div>
+            <div class="payContainer">
+              <span> 상품 금액</span>
+              <span class="totalCost">16000</span>
+            </div>
+            <div class="toCart">
+              <button class="putInCart">담기</button>
+            </div>
+          </li>
+          <li id="1" class="item">
+            <div class="itemContainer">
+              <img
+                class="img"
+                src="./img/에티오피아원두.jpg"
+                alt="에티오피아원두"
+              />
+              <div class="itemInfo">
+                <span>Etiopia</span>
+                <p>에티오피아 원두 250g</p>
+                <p>
+                  다크초콜릿의 벨벳 같은 부드러움과 후추 같은 스파이시함, 달콤한
+                  감귤류의 품미가 특징인 원두
+                </p>
+              </div>
+            </div>
+            <div class="upDownBtn">
+              <button class="downBtn">-</button>
+              <span class="countNum">1</span>
+              <button class="upBtn">+</button>
+            </div>
+            <div class="payContainer">
+              <span> 상품 금액</span>
+              <span class="totalCost">18000</span>
+            </div>
+            <div class="toCart">
+              <button class="putInCart">담기</button>
+            </div>
+          </li>
+          <li id="1" class="item">
+            <div class="itemContainer">
+              <img
+                class="img"
+                src="./img/콜롬비아원두.jpg"
+                alt="콜롬비아원두"
+              />
+              <div class="itemInfo">
+                <span>Clolmbia</span>
+                <p>콜롬비아 원두 250g</p>
+                <p>견과류의 풍미를 간직한 부드럽고 균형 잡힌 커피</p>
+              </div>
+            </div>
+            <div class="upDownBtn">
+              <button class="downBtn">-</button>
+              <span class="countNum">1</span>
+              <button class="upBtn">+</button>
+            </div>
+            <div class="payContainer">
+              <span> 상품 금액</span>
+              <span class="totalCost">16000</span>
+            </div>
+            <div class="toCart">
+              <button class="putInCart">담기</button>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+    
+    <template id="cart-item-li">
+      <li id="1" class="item">
+        <div class="itemContainer">
+          <img class="img" src="" alt="" />
+          <div class="itemInfo">
+            <span class="productCoffeeName"></span>
+            <p class="coffeeType"></p>
+            <p class="eachCoffeeInfo"></p>
+          </div>
+        </div>
+        <div class="upDownBtn">
+          <button class="downBtn">-</button>
+          <span class="countNum"></span>
+          <button class="upBtn">+</button>
+        </div>
+        <div class="payContainer">
+          <span class="payTitle"> 상품 금액</span>
+          <span class="totalCost"></span>
+        </div>
+        <div class="toCart">
+          <button class="putInCart">담기</button>
+        </div>
+      </li>
+    </template>
+
+    <script src="list.js"></script>
+  </body>
+</html>
