@@ -1,42 +1,24 @@
-// date 배열로 담음
+// data 배열로 담음
 let productItems = [];
-const cartItmes = [];
-const $liTemplate = document.getElementById('cart-item-li').content
+// const mycartItmes = [];
+const $liTemplate = document.getElementById('product-item-li').content
   .firstElementChild;
 
 // DOM
-const $totlaCost = document.querySelector('.totalCost');
-const $upBtn = document.querySelector('.upBtn');
-const $downBtn = document.querySelector('.downBtn');
-const $countNum = document.querySelector('.countNum');
-const $putInCart = document.querySelector('.putInCart');
-const $goCartPage = document.querySelector('.goCartPage');
-const $itemLists = document.querySelector('.lists');
+// const $container = document.querySelector('.container');
+// const $totlaCost = document.querySelector('.totalCost');
+// const $upBtn = document.querySelector('.upBtn');
+// const $downBtn = document.querySelector('.downBtn');
+// const $countNum = document.querySelector('.countNum');
+// const $putInCart = document.querySelector('.putInCart');
+// const $goCartPage = document.querySelector('.goCartPage');
+const $itemLists = document.querySelector('.itemLists');
+// const $item = document.querySelector('ltem');
 
-// 상품 수량 증가와 함께 금액 증가
-$upBtn.onclick = ({ target }) => {
-  // const nowCost = parseInt(
-  //   target.parentNode.nextElementSibling.lastElementChild,
-  //   10
-  // );
-  console.log({ target });
-  const currentNum = parseInt($countNum.innerText, 10);
-  const currentCost = parseInt($totlaCost.innerText, 10);
-  $countNum.innerText = currentNum + 1;
-  $totlaCost.innerText = +currentCost + 16000;
-};
-
-// 상품 수량 감소와 함께 금액 감소
-$downBtn.onclick = ({ target }) => {
-  console.log({ target });
-  const currentNum = parseInt($countNum.innerText, 10);
-  const currentCost = parseInt($totlaCost.innerText, 10);
-  $countNum.innerText = currentNum - 1;
-  $totlaCost.innerText = currentCost - 16000;
-};
-
-// 장바구니 페이지로 가는 함수
-// $goCartPage.onclick = async () => {
+// 금액 자리수
+// const moneyfilter = money => {
+//   return '₩' + money.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+// };
 
 // product페이지 서버에서 불러와서 렌더.
 document.addEventListener('DOMContentLoaded', async () => {
@@ -44,66 +26,101 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
       const res = await fetch('http://localhost:4000/api/appPosts/myproduct');
       productItems = await res.json();
+      console.log(productItems, 'productItems');
     } catch (e) {
-      console.log(e, '에러남');
+      console.log(e, '프로덕트에러남ㅎ');
     }
   };
   await fetchItems();
 
-  console.log(productItems, 12);
-
-  const $FragmentNode = document.createDocumentFragment();
+  const $FragmentNode = document.createDocumentFragment(); // ul-$itemLists에 appendChild해야함.===$itemLists.appendChild($FragmentNode)
 
   productItems.forEach(item => {
     const $newProductNode = $liTemplate.cloneNode(true);
+
     // 데이터가 바뀌는 노드만 잡기.
-    const $imgNode = $liTemplate.querySelector('.img');
-    const $productCoffeeNameNode = $liTemplate.querySelector(
+    const $imgNode = $newProductNode.querySelector('.img');
+    const $productCoffeeNameNode = $newProductNode.querySelector(
       '.productCoffeeName'
     );
-    const $coffeeTypeNode = $liTemplate.querySelector.querySelector(
-      '.coffeeType'
+    const $coffeeTypeNode = $newProductNode.querySelector('.coffeeType');
+    const $eachCoffeeInfoNode = $newProductNode.querySelector(
+      '.eachCoffeeInfo'
     );
-    const $eachCoffeeInfoNode = $liTemplate.querySelector('.eachCoffeeInfo');
-    const $countNum = $liTemplate.querySelector('.countNum');
-    const $totalCost = $liTemplate.querySelector('.totalCost');
+    const $countNum = $newProductNode.querySelector('.countNum');
+    const $totalCost = $newProductNode.querySelector('.totalCost');
 
-    $newProductNode.classList.add(item._id);
+    $newProductNode.id = item._id;
+    console.log($newProductNode.id, 'productid');
+    // $newProductNode.classList.add(item._id);
+    // console.log($newProductNode.classList[1], 'classlist');
     // $imgNode.src = item.imageUrl;
     $imgNode.setAttribute('src', item.imageUrl);
     $productCoffeeNameNode.textContent = item.name;
     $coffeeTypeNode.textContent = item.type;
     $eachCoffeeInfoNode.textContent = item.subName;
-    $countNum.textContent = item + 1;
-    $totalCost.textContent = '₩' + item.price;
+    $countNum.textContent = 1;
+    $totalCost.textContent = item.price;
+    // ₩
 
-    $FragmentNode.appendChild(productItems);
-    console.log($FragmentNode, 124134);
-
-    return $FragmentNode;
+    $FragmentNode.appendChild($newProductNode);
   });
-  console.log($FragmentNode, 124134);
-  // window.location.href = './cart.html';
+  $itemLists.appendChild($FragmentNode);
+  console.log($itemLists, 'itemlists');
 });
 
-// document.addEventListener('DOMContentLoaded', async () => {
-//   const fetchItems = async () => {
-//     try {
-//       const res = await fetch('http://localhost:4000/api/appPosts/myproduct');
-//       cartItmes = await res.json();
-//     } catch (e) {
-//       console.log(e, '에러남');
-//     }
-//   };
-//   await fetchItems();
-//   renderProduct($items, items);
-// });
+// 상품 수량 증감 함수
+const changeItemNumber = e => {
+  if (!(e.target.matches('.upBtn') || e.target.matches('.downBtn'))) return;
 
-console.log(productItems, 'product');
-
-// 서버와 통신
-
-// 장바구니에 넣는 함수
-$putInCart.onclick = ({ target }) => {
-  console.log({ target });
+  if (e.target.matches('.upBtn')) {
+    const quantity = +e.target.previousElementSibling.textContent;
+    e.target.previousElementSibling.textContent = quantity + 1;
+    // const cost = +e.target.parentNode.nextElementSibling.lastElementChild
+    //   .textContent;
+    // e.target.parentNode.nextElementSibling.lastElementChild.textContent =
+    //   cost * e.target.previousElementSibling.textContent;
+  } else {
+    const quantity = +e.target.nextElementSibling.textContent;
+    e.target.nextElementSibling.textContent = quantity - 1;
+    // const cost = +e.target.parentNode.nextElementSibling.lastElementChild
+    //   .textContent;
+    // e.target.parentNode.nextElementSibling.lastElementChild.textContent =
+    //   cost / e.target.nextElementSibling.textContent;
+  }
 };
+// 상품 수량 증감 함수 이벤트 바인딩.
+$itemLists.addEventListener('click', changeItemNumber);
+
+// 장바구니 추가 함수
+const putAProductInCart = async e => {
+  if (!e.target.matches('.putInCart')) return;
+
+  const targetLi = e.target.closest('li').cloneNode(true); // closest: targetElement에서부터 closest()메소드를 통해 만족하는 요소 탐색 후 부모 요소 반환
+  const productId = e.target.closest('li').id;
+  console.log(productId, 'productafsdfId');
+  const numberOfCart = targetLi.querySelector('.countNum').textContent;
+  const name = targetLi.querySelector('.productCoffeeName').textContent;
+  const price = +targetLi.querySelector('.totalCost').textContent;
+  const imageUrl = targetLi.querySelector('img').getAttribute('src');
+
+  const option = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ numberOfCart, name, price, imageUrl })
+  };
+
+  const res = await fetch(
+    `http://localhost:4000/api/appPosts/mycart/add/${productId}`,
+    option
+  );
+  console.log(res, 'res');
+
+  const $closestLi = e.target.closest('li');
+
+  $closestLi.querySelector('.countNum').textContent = '1';
+};
+
+$itemLists.addEventListener('click', putAProductInCart);
