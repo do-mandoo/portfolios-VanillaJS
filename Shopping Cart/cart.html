@@ -8,43 +8,82 @@
     <link rel="stylesheet" href="./cart.css" />
   </head>
   <body>
-    <h1 class="title">shopping Cart</h1>
+    <h1 class="title">Your Cart</h1>
     <main class="container">
-      <button class="goListPage">목록으로 가기</button>
+      <a class="goListPage" href="./list.html">목록으로 가기</a>
       <section class="listContainer">
         <h2 class="a11yHidden">장바구니 구현</h2>
-        <ul class="lists">
+        <!-- <button class="allSelect">전체선택</button> -->
+        <button class="allDelete">전체삭제</button>
+        <ul class="cartItemLists">
           <!-- list 생성 -->
-          <button class="allSelect">전체선택</button>
-          <button class="allDelete">전체삭제</button>
-          <li class="eachItemList">
-            <input type="checkbox" class="itemCheckBox" checked="false" />
-            <span>사진1</span>
-            <span>수량3개</span>
-            <span>가격100원</span>
-            <button class="cartItemDel">삭제</button>
-          </li>
-          <li class="eachItemList">
-            <input type="checkbox" />
-            <span>사진2</span>
-            <span>수량2개</span>
-            <span>가격200원</span>
-            <button class="cartItemDel">삭제</button>
-          </li>
-          <li class="eachItemList">
-            <input type="checkbox" />
-            <span>사진3</span>
-            <span>수량1개</span>
-            <span>가격300원</span>
-            <button class="cartItemDel">삭제</button>
-          </li>
+          <!-- <li id="" class="cartItem">
+            <input type="checkbox" class="checkbox" id="cartCk" />
+            <div class="cartItemContainer">
+              <img class="cartImg" src="" alt="hi" />
+              <div class="cartItemInfo">
+                <span class="cartProductCoffeeName">이름</span>
+                <p class="cartCoffeeType">커피타입</p>
+                <p class="cartEachCoffeeInfo">커피정보</p>
+              </div>
+            </div>
+            <div class="cartUpDownBtn">
+              <button class="cartDownBtn">-</button>
+              <span class="cartCountNum">1</span>
+              <button class="cartUpBtn">+</button>
+            </div>
+            <div class="cartPayContainer">
+              <span class="cartPayTitle"> 상품 금액</span>
+              <span class="cartTotalCost">16000</span>
+            </div>
+            <div class="cartToCart">
+              <button class="cartDeletItem">삭제</button>
+            </div>
+          </li> -->
         </ul>
       </section>
       <section>
         <span>총 주문 금액</span>
-        <span class="totlaCost">xx,xxx</span>
+        <span class="totalCost">xx,xxx</span>
       </section>
     </main>
-    <script src="cart.js"></script>
+
+    <template id="cart-item-li">
+      <li id="" class="cartItem">
+        <!-- <input type="checkbox" class="checkbox" id="cartCk" /> -->
+        <div class="cartItemContainer">
+          <img class="cartImg" src="" alt="" />
+          <div class="cartItemInfo">
+            <span class="cartProductCoffeeName"></span>
+            <p class="cartCoffeeType"></p>
+            <p class="cartEachCoffeeInfo"></p>
+          </div>
+        </div>
+        <div class="cartUpDownBtn">
+          <button class="cartDownBtn">-</button>
+          <span class="cartCountNum"></span>
+          <button class="cartUpBtn">+</button>
+        </div>
+        <div class="cartPayContainer">
+          <span class="cartPayTitle"> 상품 금액</span>
+          <span class="cartTotalCost"></span>
+        </div>
+        <div class="cartToCart">
+          <button class="cartDeletItem">삭제</button>
+        </div>
+      </li>
+    </template>
+
+    <!-- 
+    cartId: String,
+    numberOfCart: Number,
+    name: String,
+    type: String,
+    subName: String,
+    price: Number,
+    imageUrl: String 
+    -->
+
+    <script src="./cart.js"></script>
   </body>
 </html>

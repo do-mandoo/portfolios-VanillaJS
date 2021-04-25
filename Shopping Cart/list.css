@@ -16,15 +16,20 @@
   position: relative;
 }
 .goCartPage {
+  border: 1px solid darkorange;
+  padding: 3px;
+  text-decoration: none;
   position: absolute;
   top: -45px;
   right: 30px;
+  color: #000;
+  font-weight: 600;
 }
 .title {
   border: 1px solid blue;
   margin: 10px 20px;
 }
-.lists {
+.itemLists {
   min-width: 1100px;
   border: 1px solid red;
   margin: 10px 30px;
@@ -42,8 +47,9 @@
   align-items: center;
   line-height: 30px;
 }
-.img {
+img {
   width: 100px;
+  min-width: 100px;
   height: 100px;
   border: 1px solid green;
   margin: 10px;
@@ -81,4 +87,7 @@
   border-radius: 5px;
   border: none;
   border: 1px solid #aaa;
+}
+.putInCart:active {
+  background-color: darkorange;
 }
