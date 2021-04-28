@@ -115,19 +115,29 @@ $cartItemLists.addEventListener('click', changeCartNumber);
 // 각 리스트 삭제
 const cartListDelete = async e => {
   if (!e.target.matches('.cartDeletItem')) return;
-  const cartId = e.target.closest('li').id;
-  console.log(cartId, 'cart_id');
+  // const cartId = e.target.closest('li').id;
+  // console.log(cartId, 'cart_id');
+  const cartlist = e.target.closest('li').classList[1];
+  console.log(cartlist, 'cartlist cartId');
 
   const option = {
     method: 'DELETE'
   };
   const res = await fetch(
-    `http://localhost:4000/api/appPosts/mycart/delete/${cartId}`,
+    `http://localhost:4000/api/appPosts/mycart/delete/${cartlist}`,
     option
   );
-  cartItems = await res.json();
+  // console.log(res.json());
+  // cartItems = await res;
+  console.log('akjdf');
+  cartItems = res;
+  // cartItems = await res();
   console.log(cartItems, '삭제후cartItems');
-  $cartItemLists.replaceChild(document(cartItems));
+  const el = e.path[2];
+  // console.log(el, 'el');
+  // console.log(cartItems, 'cartitems');
+  // console.log($cartItemLists.firstElementChild, 338383);
+  $cartItemLists.removeChild(el);
 
   // 리스트 삭제되면 다시 계산해서 총 합계 나타남.
   const allCosts = () => {

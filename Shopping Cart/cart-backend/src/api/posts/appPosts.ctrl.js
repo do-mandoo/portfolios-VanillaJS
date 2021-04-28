@@ -49,7 +49,7 @@ export const Pwrite = async ctx => {
     price,
     imageUrl
   });
-  console.log(product, '2324product');
+  // console.log(product, '2324product');
   try {
     await product.save();
     ctx.body = product;
@@ -59,7 +59,7 @@ export const Pwrite = async ctx => {
 };
 
 /* 포스트 작성 Cart
-POST /api/appPosts/mycart/add
+POST /api/appPosts/mycart/:add
 {
   numberOfCart:number,
   name: 이름,
@@ -73,20 +73,21 @@ export const Cwrite = async ctx => {
     // 객체가 다음 필드를 가지고 있음을 검증
     numberOfCart: Joi.number().required(),
     name: Joi.string().required(), // required() 가 있으면 필수 항목
-    type: Joi.string().required(),
-    subName: Joi.string().required(),
+    // type: Joi.string().required(),
+    // subName: Joi.string().required(),
     price: Joi.number().required(),
     imageUrl: Joi.string().required()
   });
   // 검증하고나서 검증 실패인 경우 에러처리
   console.log('sddsfdsdlfkjslekfjlsdkjf');
   const result = schema.validate(ctx.request.body);
-  console.log(result, 'dsfdsfdsfds');
+  console.log(result, 'result dsfdsfdsfds');
   if (result.error) {
     ctx.status = 404; // Bad Request
     ctx.body = result.error;
     return;
   }
+  console.log('aghoqoe83294d');
   const { id } = ctx.params;
   const {
     numberOfCart,
@@ -106,8 +107,9 @@ export const Cwrite = async ctx => {
   });
   console.log(cart, '2324cart');
   try {
-    console.log(id, 'sdfsdfdsfdsfdsf');
+    // console.log(id, 'akunufsiug');
     const oldCart = await Cart.findOne({ cartId: id }).exec();
+    // console.log(oldCart, 'oldCart');
     if (oldCart) {
       const cart = await Cart.findOneAndUpdate(
         { cartId: id },
@@ -145,7 +147,7 @@ export const Plist = async ctx => {
 };
 
 /* 포스트 데이터 목록 조회 Cart
-GET /api/myproduct */
+GET /api/mycart */
 export const Clist = async ctx => {
   try {
     const cart = await Cart.find().exec();
@@ -173,8 +175,13 @@ export const Clist = async ctx => {
 DELETE /api/mycart/delete/:id */
 export const remove = async ctx => {
   const { id } = ctx.params;
+  console.log(ctx.params, 'params');
   try {
-    await Cart.findByIdAndRemove(id).exec();
+    await Cart.findOneAndDelete({ cartId: id }).exec();
+    const cart = await Cart.find().exec();
+    console.log(cart, 'cart311');
+    ctx.body = cart;
+    console.log(ctx.body, 'ctx.body195843075');
     ctx.status = 204; // No Content(성공하기는 했지만 응답할 데이터는 없음)
   } catch (e) {
     ctx.throw(500, e);
@@ -210,10 +217,15 @@ export const update = async ctx => {
     return;
   }
   try {
-    const cart = await Cart.findByIdAndUpdate(id, ctx.request.body, {
-      new: true // 이 값을 설정하면 업데이트된 데이터를 반환합니다.
-      // false일때는 업데이트 되기 전의 데이터를 반환합니다.
-    }).exec();
+    const cart = await Cart.findOneAndUpdate(
+      id,
+      ctx.request.body,
+      {
+        new: true // 이 값을 설정하면 업데이트된 데이터를 반환합니다. false일때는 업데이트 되기 전의 데이터를 반환합니다.
+      },
+      { cartId: id },
+      { numberOfCart }
+    ).exec();
     if (!cart) {
       ctx.status = 404;
     } else {

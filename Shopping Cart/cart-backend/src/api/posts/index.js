@@ -16,9 +16,13 @@ appPosts.get('mycart/:id', postsCtrl.checkObjectId, postsCtrl.Cread);
 appPosts.get('myproduct/:id', postsCtrl.checkObjectId, postsCtrl.Pread); */
 
 // 특정 데이터 삭제
-appPosts.delete('mycart/delete/:id', postsCtrl.checkObjectId, postsCtrl.remove);
+appPosts.delete(
+  '/mycart/delete/:id',
+  postsCtrl.checkObjectId,
+  postsCtrl.remove
+);
 
 // 특정 데이터 수정
-appPosts.patch('mycart/modify/:id', postsCtrl.checkObjectId, postsCtrl.update);
+appPosts.patch('/mycart/modify/:id', postsCtrl.checkObjectId, postsCtrl.update);
 
 export default appPosts;
