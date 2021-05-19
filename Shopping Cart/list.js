@@ -4,6 +4,10 @@ let productItems = [];
 const $liTemplate = document.getElementById('product-item-li').content
   .firstElementChild;
 
+// pagination페이지네이션
+const currentPage = 1;
+const rows = 4;
+
 // DOM
 // const $container = document.querySelector('.container');
 // const $totlaCost = document.querySelector('.totalCost');
@@ -13,6 +17,7 @@ const $liTemplate = document.getElementById('product-item-li').content
 // const $putInCart = document.querySelector('.putInCart');
 // const $goCartPage = document.querySelector('.goCartPage');
 const $itemLists = document.querySelector('.itemLists');
+const $pagenumbers = document.querySelector('.pagenumbers');
 // const $item = document.querySelector('ltem');
 
 // 금액 자리수
@@ -32,6 +37,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   };
   await fetchItems();
+  console.log(productItems, 'productItems');
 
   const $FragmentNode = document.createDocumentFragment(); // ul-$itemLists에 appendChild해야함.===$itemLists.appendChild($FragmentNode)
 
@@ -51,7 +57,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const $totalCost = $newProductNode.querySelector('.totalCost');
 
     $newProductNode.id = item._id;
-    console.log($newProductNode.id, 'productid');
+    // console.log($newProductNode.id, 'productid');
     // $newProductNode.classList.add(item._id);
     // console.log($newProductNode.classList[1], 'classlist');
     // $imgNode.src = item.imageUrl;
@@ -67,6 +73,51 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
   $itemLists.appendChild($FragmentNode);
   console.log($itemLists, 'itemlists');
+
+  // 페이지네이션 pagination
+  // function DisplayList(items, wrapper, rowPage, page) {
+  //   wrapper.innerHTML = '';
+  //   console.log(293, items, wrapper, rowPage, page);
+  //   const zeroPage = page - 1;
+  //   const start = rowPage * zeroPage;
+  //   const end = start + rowPage;
+
+  //   const paginationItems = items.slice(start, end);
+  //   for (let i = 0; i < paginationItems.length; i++) {
+  //     const item = paginationItems[i];
+  //     const itemElement = document.createElement('div');
+  //     itemElement.classList.add('item');
+  //     itemElement.textContent = item;
+
+  //     wrapper.appendChild(itemElement);
+  //   }
+  // }
+
+  // function PagenationButton(page, items) {
+  //   const $button = document.createElement('button');
+  //   $button.textContent = page;
+  //   if (currentPage === page) $button.classList.add('active');
+  //   $button.addEventListener('click', () => {
+  //     currentPage = page;
+  //     DisplayList(items, $list, rows, currentPage);
+  //     const currentBtn = document.querySelector('.pagenumbers button.active');
+  //     currentBtn.classList.remove('active');
+  //     $button.classList.add('active');
+  //   });
+  //   return $button;
+  // }
+
+  // function MakePagenation(items, wrapper, rowPage) {
+  //   wrapper.innerHTML = '';
+  //   console.log(123, items, wrapper, rowPage);
+  //   const pageCount = Math.ceil(items.length / rowPage);
+  //   for (let i = 1; i < pageCount + 1; i++) {
+  //     const button = PagenationButton(i, items);
+  //     wrapper.appendChild(button);
+  //   }
+  // }
+  // DisplayList(productItems, $itemLists, rows, currentPage);
+  // MakePagenation(productItems, $pagenumbers, rows);
 });
 
 // 상품 수량 증감 함수
@@ -124,3 +175,22 @@ const putAProductInCart = async e => {
 };
 
 $itemLists.addEventListener('click', putAProductInCart);
+
+// 스크롤이벤트 GO TO TOP SCROLL
+window.addEventListener('scroll', () => {
+  // if (document.querySelector('html').scrollTop > 100) { 과 아래가 같음.
+  if (window.pageYOffset > 100) {
+    document.querySelector('.scroll-icon').style.display = 'block';
+  } else {
+    document.querySelector('.scroll-icon').style.display = 'none';
+  }
+});
+// back to top
+document.querySelector('.scroll-icon').addEventListener('click', () => {
+  window.scrollTo({
+    // 문서의 지정된 위치로 스크롤한다.
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  });
+});

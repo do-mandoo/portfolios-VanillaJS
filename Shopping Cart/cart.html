@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="./cart.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
   </head>
   <body>
     <h1 class="title">Your Cart</h1>
     <main class="container">
-      <a class="goListPage" href="./list.html">목록으로 가기</a>
       <section class="listContainer">
+        <a class="goListPage" href="./list.html"
+          ><i class="fas fa-store fa-3x"></i
+        ></a>
         <h2 class="a11yHidden">장바구니 구현</h2>
         <!-- <button class="allSelect">전체선택</button> -->
         <button class="allDelete">전체삭제</button>
@@ -42,8 +48,8 @@
           </li> -->
         </ul>
       </section>
-      <section>
-        <span>총 주문 금액</span>
+      <section class="totalCostWrap">
+        <span class="totalCostText">총 주문 금액</span>
         <span class="totalCost">xx,xxx</span>
       </section>
     </main>
