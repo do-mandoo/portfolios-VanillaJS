@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="./cart.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <h1 class="title">Your Cart</h1>
+    <main class="container">
+      <section class="listContainer">
+        <a class="goListPage" href="./list.html"
+          ><i class="fas fa-store fa-3x"></i
+        ></a>
+        <h2 class="a11yHidden">장바구니 구현</h2>
+        <!-- <button class="allSelect">전체선택</button> -->
+        <button class="allDelete">전체삭제</button>
+        <ul class="cartItemLists">
+          <!-- list 생성 -->
+          <!-- <li class="cartItem">
+            <input type="checkbox" class="checkbox" id="cartCk" />
+            <div class="cartItemContainer">
+              <img class="cartImg" src="" alt="hi" />
+              <div class="cartItemInfo">
+                <span class="cartProductCoffeeName">이름</span>
+                <p class="cartCoffeeType">커피타입</p>
+                <p class="cartEachCoffeeInfo">커피정보</p>
+              </div>
+            </div>
+            <div class="cartUpDownBtn">
+              <button class="cartDownBtn">-</button>
+              <span class="cartCountNum">1</span>
+              <button class="cartUpBtn">+</button>
+            </div>
+            <div class="cartPayContainer">
+              <span class="cartPayTitle"> 상품 금액</span>
+              <span class="cartTotalCost">16000</span>
+            </div>
+            <div class="cartToCart">
+              <button class="cartDeletItem">삭제</button>
+            </div>
+          </li> -->
+        </ul>
+      </section>
+      <section class="totalCostWrap">
+        <span class="totalCostText">총 주문 금액</span>
+        <span class="totalCost">xx,xxx</span>
+      </section>
+    </main>
+
+    <template id="cart-item-li">
+      <li class="cartItem">
+        <!-- <input type="checkbox" class="checkbox" id="cartCk" /> -->
+        <div class="cartItemContainer">
+          <img class="cartImg" src="" alt="" />
+          <div class="cartItemInfo">
+            <span class="cartProductCoffeeName"></span>
+            <p class="cartCoffeeType"></p>
+            <p class="cartEachCoffeeInfo"></p>
+          </div>
+        </div>
+        <div class="cartUpDownBtn">
+          <button class="cartDownBtn">-</button>
+          <span class="cartCountNum"></span>
+          <button class="cartUpBtn">+</button>
+        </div>
+        <div class="cartPayContainer">
+          <span class="cartPayTitle"> 상품 금액</span>
+          <span class="cartTotalCost"></span>
+        </div>
+        <div class="cartToCart">
+          <button class="cartDeletItem">삭제</button>
+        </div>
+      </li>
+    </template>
+
+    <!-- 
+    cartId: String,
+    numberOfCart: Number,
+    name: String,
+    type: String,
+    subName: String,
+    price: Number,
+    imageUrl: String 
+    -->
+
+    <script src="./cart.js"></script>
+  </body>
+</html>

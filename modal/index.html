@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./modal.css" />
+    <title>Modal</title>
+  </head>
+  <body>
+    <h1>JS는 Modal, 성시경은 Moda</h1>
+    <p>아래 버튼을 클릭하면 모달창이 뜹니다! alart과 다릅니다!</p>
+    <!-- <p>pointerEventCss사용해보자ㅎㅎ</p>
+    웹컴포넌트는 class로만들어야해?.js
+    애니메이션 엔드, ~~엔드. -->
+    <button id="open">버튼 꾺</button>
+    <div class="modalContainer" style="display: none">
+      <div class="modal">
+        <div class="modalTitle">모달창입니다! 반갑습니다.</div>
+        <p>모달 내용은 차차 채워나갑시다!</p>
+        <div class="modalClose">
+          <button id="close">닫기</button>
+        </div>
+      </div>
+    </div>
+    <script src="./modal.js"></script>
+  </body>
+</html>

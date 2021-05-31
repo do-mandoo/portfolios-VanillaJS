@@ -1,0 +1,137 @@
+* {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.a11yHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  background: #eee;
+}
+.title {
+  background: silver;
+  width: 100%;
+  min-height: 300px;
+  background: url('./img/coffee-1324126_1920.jpg') no-repeat center;
+  background-size: center;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+}
+.listContainer {
+  width: 100%;
+  position: relative;
+}
+.goListPage {
+  padding: 10px;
+  text-decoration: none;
+  background: #bbb;
+  border-radius: 20px;
+  position: absolute;
+  top: 17px;
+  right: 20px;
+}
+.fas {
+  color: #eee;
+}
+.cartItemLists {
+  min-width: 1100px;
+  margin: 100px 30px;
+}
+.eachItemList,
+.cartItem {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px dashed rgba(85, 107, 47, 0.4);
+  padding: 10px 0;
+}
+.cartItem > div {
+  margin-right: 10px;
+}
+.cartItemContainer {
+  display: flex;
+  align-items: center;
+  line-height: 30px;
+}
+img {
+  width: 100px;
+  min-width: 100px;
+  height: 100px;
+  border: 1px solid green;
+  margin: 10px;
+  border-radius: 15px;
+}
+.cartItemInfo {
+  min-width: 540px;
+  height: 100px;
+  background: #fff;
+  border: 1px solid rgb(87, 30, 30, 0.3);
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.cartItemInfo > span {
+  font-size: 20px;
+  font-weight: 700;
+}
+.cartItemInfo > p:last-child {
+  font-size: 13px;
+  line-height: 16px;
+}
+.cartUpDownBtn {
+  border: 1px solid rgb(87, 30, 30, 0.3);
+  border-radius: 10px;
+  padding: 37.5px 20px;
+  background: #fff;
+}
+.cartUpDownBtn > button {
+  padding: 2px 8px;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid #aaa;
+  cursor: pointer;
+}
+.cartCountNum {
+  width: 30px;
+  padding: 0px 8px;
+  border: 1px solid #aaa;
+}
+.cartPayContainer {
+  border: 1px solid rgb(87, 30, 30, 0.3);
+  border-radius: 10px;
+  padding: 37px 20px;
+  background: #fff;
+}
+.cartToCart {
+  margin-right: 10px;
+  border: 1px solid rgb(87, 30, 30, 0.3);
+  border-radius: 10px;
+  padding: 28px 40px;
+  background: #fff;
+}
+.cartDeletItem {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid #aaa;
+  cursor: pointer;
+}
+.cartDeletItem:active {
+  background-color: deeppink;
+  color: #fff;
+}

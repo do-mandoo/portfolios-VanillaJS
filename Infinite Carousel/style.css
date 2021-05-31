@@ -1,0 +1,90 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+.carouselWrapper {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+.container {
+  width: 130px;
+  height: 130px;
+  border: 1px solid black;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+.slideAll {
+  max-width: 600px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  transition: 0.2s all;
+  transform: translateX(-100px);
+}
+
+.slide {
+  position: relative;
+  min-width: 100px;
+  max-height: 100px;
+  font-size: 100px;
+  transform: translate(-50% -50%);
+  text-align: center; /* 가로가운데정렬 */
+  line-height: 90px; /* 세로가운데정렬 한땀한땀 */
+}
+
+.slideItem1,
+#firstClone {
+  background-color: forestgreen;
+}
+.slideItem2 {
+  background-color: darkorange;
+}
+.slideItem3 {
+  background-color: darkorchid;
+}
+.slideItem4 {
+  background-color: deeppink;
+}
+.slideItem5,
+#lastClone {
+  background-color: deepskyblue;
+}
+
+/* controler */
+.prev,
+.next {
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  opacity: 0.5;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+.prev:hover,
+.next:hover {
+  opacity: 1;
+}
+.prev {
+  left: 0px;
+}
+.next {
+  right: 0px;
+}
