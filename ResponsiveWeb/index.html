@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Web</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="a11y-hidden"></h1>
+        <a href="#"
+          ><img
+            class="logo"
+            src="./image/coffeeLuvLogo.png"
+            alt="UnderPressure"
+        /></a>
+        <ul class="ulListWrap">
+          <li class="headerList"><a href="#">HOME</a></li>
+          <li class="headerList"><a href="#">COFFEE</a></li>
+          <li class="headerList"><a href="#">COLE BREW</a></li>
+          <li class="headerList"><a href="#">BAKERY</a></li>
+          <li class="headerList"><a href="#">SHOP</a></li>
+          <li class="headerList"><a href="#">LOGIN</a></li>
+        </ul>
+        <button class="searchBtn"><i class="fas fa-search"></i></button>
+      </header>
+      <nav class="mobileView menu">
+        <h2 class="a11y-hidden">메인메뉴</h2>
+        <button class="buttonNone buttonBurger" aria-label="메뉴 열기">
+          <span id="burgerBar round positionTop"></span>
+          <span id="burgerBar round positionMiddle"></span>
+          <span id="burgerBar round positionBottom"></span>
+        </button>
+      </nav>
+      <div class="visual1">
+        <h2 class="introCafee a11y-hidden">일상 속의 특별한 휴식</h2>
+        <div class="introCafeeWordWrap">
+          <div class="firstWordWrap">
+            <p>I'VE BEEN FEELING</p>
+            <p>UNDER PRESSURE</p>
+          </div>
+          <div class="secondWordWrap">
+            <p>일상 속의 특별한 휴식, 언더프레셔</p>
+            <p>
+              자체 개발한 여과식 추출 방식과 철저하고 체계적인 위생관리 시스템을
+              통해<br />보다 선명하고 깨끗한 콜드브루 커피를 선보입니다
+            </p>
+          </div>
+        </div>
+      </div>
+      <main class="main">
+        <section class="sections gridSection">
+          <h2 class="a11y-hidden">ABOUT-COFFEE BEANS & ROASTING</h2>
+          <div class="sectionWrap">
+            <p class="sectionTitle">ABOUT</p>
+            <hr />
+            <p class="sectionSubTitle">COFFEE BEANS & ROASTING</p>
+          </div>
+          <ul class="coffeeTypes">
+            <li class="div1">
+              <img src="./image/coffeeBean.jpg" alt />
+              <p>커피 본연의 맛을 찾아</p>
+              <p>In search of natural born Sweetness</p>
+              <button>See Detail</button>
+            </li>
+            <li class="div2">
+              <img src="./image/coffeeBean.jpg" alt />
+              <p>조화로운 열의 전달</p>
+              <p>Harmonious heat Delivery</p>
+              <button>See Detail</button>
+            </li>
+            <li class="div3">
+              <img src="./image/coffeeBean.jpg" alt />
+              <p>블랜드? 상상만 했던 그 맛!</p>
+              <p>Blend : Mix & Match</p>
+              <button>See Detail</button>
+            </li>
+            <li class="div4">
+              <img src="./image/coffeeBean.jpg" alt />
+              <p>로스팅 : 달콤함의 발현</p>
+              <p>More than just a Rating</p>
+              <button>See Detail</button>
+            </li>
+          </ul>
+        </section>
+        <article class="HMBakery">
+          <h2 class="a11y-hidden">HomemadeBakery</h2>
+          <p class="articleTitle">HOMEMADE<br />BAKERY</p>
+        </article>
+        <section class="sections">
+          <h2 class="a11y-hidden">DESSERT</h2>
+          <div class="sectionWrap">
+            <p class="sectionTitle">DESSERT</p>
+            <hr />
+            <p class="sectionSubTitle">SWEETS & BRUNCH</p>
+          </div>
+          <ul class="dessertTypes">
+            <li>
+              <img src="./image/coffeeBean.jpg" alt="티라미수" />
+              <p>티라미수</p>
+              <p>TIRAMISU</p>
+            </li>
+            <li>
+              <img src="./image/coffeeBean.jpg" alt="치즈케이크타르트" />
+              <p>치즈케이크 타르트</p>
+              <p>CHEESE CAKE TART</p>
+            </li>
+            <li>
+              <img src="./image/coffeeBean.jpg" alt="파운드케이크" />
+              <p>파운드 케이크</p>
+              <p>POUND CAKE</p>
+            </li>
+          </ul>
+        </section>
+        <article class="FRBeans">
+          <h2 class="a11y-hidden">Freshroastedbeans</h2>
+          <p class="articleTitle roastBeanTitle">FRESH<br />ROASTED BEANS</p>
+        </article>
+        <section class="sections">
+          <h2 class="a11y-hidden">COLD BREW</h2>
+          <div class="sectionWrap">
+            <p class="sectionTitle">COLD BREW</p>
+            <hr />
+            <p class="sectionSubTitle">COLLECTION</p>
+          </div>
+          <ul class="collectionTypes types">
+            <li>
+              <img src="./image/coffeeBean.jpg" alt="선명, 깨끗" />
+              <p>더 선명하고 깨끗하게</p>
+              <p>For Vivid Flavor</p>
+            </li>
+            <li>
+              <img src="./image/coffeeBean.jpg" alt="자체 추출" />
+              <p>자체 개발 추출방식</p>
+              <p>Original Extraction Mechanism</p>
+            </li>
+            <li>
+              <img src="./image/coffeeBean.jpg" alt="새로운 패러다임" />
+              <p>콜드브루 커피 : 새로운 패러다임</p>
+              <p>Cold Brew Coffee: The Next Wave</p>
+            </li>
+          </ul>
+        </section>
+        <article class="CBCoffee">
+          <h2 class="a11y-hidden">Coldbrewcoffee</h2>
+          <p class="articleTitle coldBrewTitle">COLD BREW COFFEE</p>
+        </article>
+        <section class="sections">
+          <h2 class="a11y-hidden">go to shop</h2>
+          <div class="sectionWrap">
+            <p class="sectionTitle">SHOP</p>
+            <hr />
+            <p class="sectionSubTitle">ALL PRODUCTS</p>
+          </div>
+          <div class="shop">
+            <img src="./image/coffeeBean.jpg" />
+            <button class="GoToBtn">Go to shop</button>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div>
+          <img
+            class="logo"
+            src="./image/coffeeLuvLogo.png"
+            alt="UnderPressure"
+          />
+        </div>
+        <ul>
+          <li>(주)주식회사/대표자:대표자</li>
+          <li>사업자:123-45-67890/통신판매:1234-한국서울-01234호</li>
+          <li>주소:서울시 서울구 서울로 123길 45</li>
+          <li>고객센터:1234-1234/ STORE@STORE.CO.KR</li>
+        </ul>
+        <ul>
+          POLICY
+          <li>이용약관</li>
+          <li>개인정보처리방침</li>
+          <li>사업자정보 확인</li>
+        </ul>
+        <ul>
+          CONTACT
+          <li>문의하기</li>
+          <li>SNS/SITE</li>
+        </ul>
+      </footer>
+    </div>
+    <script src="./responsiveweb.js"></script>
+  </body>
+</html>

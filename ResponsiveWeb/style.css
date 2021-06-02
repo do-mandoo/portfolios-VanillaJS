@@ -1,0 +1,592 @@
+/* 공통사항 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+ul,
+li {
+  list-style: none;
+}
+p,
+div {
+  padding: 0;
+  margin: 0;
+}
+nav {
+  display: none;
+}
+/* 숨김 콘텐츠 */
+.a11y-hidden,
+legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  clip-path: polygon(0 0, 0 0, 0 0);
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+}
+/* .mainMargin {
+  padding: 0 350px;  */
+/* 처음부터 좌우 여백을 주고 시작.*/
+/* background: #bbb; */
+/* } */
+.container {
+  width: 100%;
+}
+/* 헤더 Header */
+.header {
+  width: 100%;
+  border-bottom: 1px solid #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 93px;
+  position: relative;
+}
+.header > a {
+  display: inline-block;
+  padding: 13px;
+  margin: 0;
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  cursor: pointer;
+}
+.logo {
+  width: 100px;
+}
+.ulListWrap {
+  display: flex;
+}
+.headerList {
+  padding: 10px;
+}
+.searchBtn {
+  background: none;
+  position: absolute;
+  top: 15px;
+  right: 50px;
+  font-size: 30px;
+  font-weight: lighter;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+}
+/* 1번사진 Intro IMG */
+.visual1 {
+  background: url('./image/coffeeCup.jpg') no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 875px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 120px;
+}
+
+.introCafeeWordWrap {
+  width: 800px;
+  margin: 0 auto;
+  color: #2779a4;
+}
+.firstWordWrap {
+  text-align: center;
+  line-height: 55px;
+  padding-bottom: 30px;
+}
+.firstWordWrap > p:nth-child(1) {
+  font-weight: bold;
+  font-size: 50px;
+  border-top: 1px solid rgba(39, 121, 164, 0.6);
+}
+.firstWordWrap > p:nth-child(2) {
+  font-weight: bold;
+  font-size: 90px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(39, 121, 164, 0.6);
+}
+.secondWordWrap {
+  text-align: center;
+  color: rgba(27, 86, 117, 0.9);
+  font-weight: bold;
+}
+.secondWordWrap > p:nth-child(1) {
+  font-size: 20px;
+}
+
+/* 메인 Main Section태그 공통 */
+.sections {
+  margin-bottom: 130px;
+  padding: 0 350px;
+}
+.gridSection {
+  padding: 0;
+}
+.sectionWrap {
+  text-align: center;
+  padding-bottom: 50px;
+}
+.sectionTitle {
+  font-size: 40px;
+  font-weight: bold;
+}
+hr {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  width: 350px;
+  margin: 0 auto;
+}
+.sectionSubTitle {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* 그리드 ABOUT */
+/* .coffeeTypes {
+  display: grid; 그리드 사용
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 110px;
+  grid-row-gap: 120px;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.div2 {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.div3 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.div4 {
+  grid-area: 2 / 2 / 3 / 3;
+} */
+
+.coffeeTypes li > img {
+  width: 545px;
+  height: 180px;
+}
+.coffeeTypes > li {
+  text-align: center;
+}
+.types > li {
+  padding-left: 10px;
+}
+.types > li > p:nth-child(2),
+.coffeeTypes > li > p:nth-child(2) {
+  padding-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+}
+.types > li > p:nth-child(3),
+.coffeeTypes > li > p:nth-child(3) {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.8);
+}
+.coffeeTypes > li > button,
+.GoToBtn {
+  margin-top: 30px;
+  width: 220px;
+  height: 40px;
+  cursor: pointer;
+  font-style: italic;
+  background-color: #fff;
+  border: 1px solid #000;
+  font-size: 14px;
+}
+
+/* 2번 사진 홈메이드베이커리 HOMEMADE BAKERY*/
+.HMBakery,
+.FRBeans,
+.CBCoffee {
+  width: 100%;
+  height: 600px;
+  background: url('./image/coffeeCup.jpg') no-repeat center;
+  background-size: cover;
+  position: relative;
+  margin-bottom: 120px;
+}
+.articleTitle {
+  font-size: 100px;
+  font-weight: bold;
+  color: rgba(39, 121, 164, 0.9);
+  position: absolute;
+  bottom: 100px;
+  padding: 0 350px;
+}
+
+/* 3번 사진 Ul > Li로 처리함. DESSERT */
+.dessertTypes {
+  display: flex;
+  justify-content: space-around;
+}
+.dessertTypes > li > img {
+  width: 343px;
+  height: 343px;
+  border-radius: 50%;
+}
+.dessertTypes > li {
+  text-align: center;
+  line-height: 30px;
+  padding-left: 10px;
+}
+.dessertTypes > li > p:nth-child(2) {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* 4번째 사진. fresh Roasted Beans */
+.roastBeanTitle {
+  font-size: 100px;
+  font-weight: bold;
+  color: rgba(39, 121, 164, 0.9);
+  text-align: end;
+  position: absolute;
+  right: 0px;
+  bottom: 100px;
+}
+
+/* 5번째 사진. flex로 처리. cold brew collection */
+.collectionTypes {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.collectionTypes > li > img {
+  width: 345px;
+  height: 550px;
+}
+
+/* 6번째 사진. cold brew coffee */
+.shop {
+  text-align: center;
+  margin-bottom: 120px;
+}
+.shop > img {
+  width: 100%;
+  height: 430px;
+}
+
+/* Footer 푸터 */
+.footer {
+  height: 215px;
+  background: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 350px;
+}
+.footer > ul,
+.footer > ul > li {
+  color: #222;
+}
+
+/* Grid View */
+.coffeeTypes {
+  /* position: fixed; */
+  display: grid;
+  /* left: 0;
+  top: 0; */
+}
+@media only screen and (max-width: 570px) {
+  /* 모바일 그리드 시스템 */
+  .header > a,
+  .searchBtn {
+    position: unset;
+  }
+  .logo {
+    width: 50px;
+  }
+  .searchBtn {
+    font-size: 20px;
+  }
+  .headerList {
+    padding: 0 7px;
+  }
+  /* 모바일 메뉴 제어 버튼 */
+  .buttonBurger {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    overflow: hidden;
+  }
+  .burgerBar {
+    position: absolute;
+    left: 0;
+    height: 20%;
+    width: 100%;
+    background-color: #fff;
+    transition: all 200ms ease-in-out;
+  }
+  .round {
+    border-radius: 20px;
+  }
+  .positionTop {
+    top: 0;
+  }
+  .positionMiddle {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .positionBottom {
+    /* bottom: 0; 
+      버거바를 애니메이션 효과를 줄 것이기 때문에 시작하는 지점을 통일. 핸들링 쉬움.*/
+    top: 100%;
+    transform: translateY(-100%);
+  }
+  .isAct .positionTop {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .isAct .positionMiddle {
+    transform: translateY(-50%) translateX(-105%);
+  }
+  .isAct .positionBottom {
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  /* */
+  .firstWordWrap > p:nth-child(1) {
+    font-size: 30px;
+  }
+  .firstWordWrap > p:nth-child(2) {
+    font-size: 60px;
+  }
+  .secondWordWrap > p:nth-child(1) {
+    text-align: left;
+    padding-left: 10px;
+  }
+  .secondWordWrap > p:nth-child(2) {
+    text-align: left;
+    padding-left: 10px;
+    font-size: 15px;
+  }
+  .coffeeTypes li > img {
+    width: 430px;
+    height: 190px;
+  }
+  .coffeeTypes {
+    display: grid;
+    padding: 0 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 30px;
+  }
+  .div1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .div2 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .div3 {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .div4 {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+  .articleTitle {
+    padding: 0 10px;
+    font-size: 60px;
+  }
+  .sections {
+    padding: 0 10px;
+  }
+  .dessertTypes {
+    flex-flow: column nowrap;
+  }
+  .dessertTypes > li {
+    padding-bottom: 30px;
+  }
+  .dessertTypes > li > img {
+    width: 232px;
+    height: 232px;
+  }
+  .collectionTypes > li > img {
+    width: 145px;
+    height: 250px;
+  }
+  .types > li {
+    padding: 0;
+  }
+  .types > li > p:nth-child(2) {
+    font-size: 14px;
+  }
+  .types > li:last-child > p {
+    font-size: 11px;
+  }
+  .shop > img {
+    width: 100%;
+    height: unset;
+  }
+  .coffeeTypes > li > button,
+  .GoToBtn {
+    background: #000;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .footer {
+    padding: 0;
+  }
+  .footer > ul,
+  .footer > ul > li {
+    font-size: 14px;
+  }
+  .footer > ul:nth-child(2) {
+    width: 200px;
+  }
+}
+@media only screen and (min-width: 571px) and (max-width: 992px) {
+  /* 태블릿그리드시스템 section img 세부조정 */
+  .header > a,
+  .searchBtn {
+    position: unset;
+  }
+  .logo {
+    width: 60px;
+  }
+  .searchBtn {
+    font-size: 20px;
+  }
+  .headerList {
+    padding: 0 7px;
+  }
+  .firstWordWrap {
+    line-height: 70px;
+  }
+  .collectionTypes > li > img {
+    width: 150px;
+    height: 300px;
+  }
+  .dessertTypes > li > img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  .sections {
+    padding: 0 10px;
+  }
+  .articleTitle {
+    padding: 0 10px;
+    font-size: 70px;
+  }
+}
+@media only screen and (min-width: 991px) and (max-width: 1126px) {
+  /* 태블릿 그리드 시스템 */
+  .header > a,
+  .searchBtn {
+    position: unset;
+  }
+  .logo {
+    width: 50px;
+  }
+  .searchBtn {
+    font-size: 20px;
+  }
+  .headerList {
+    padding: 0 7px;
+  }
+  .firstWordWrap {
+    line-height: 70px;
+  }
+  .coffeeTypes li > img {
+    width: 500px;
+    height: 200px;
+  }
+  .coffeeTypes {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 30px;
+  }
+  .div1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .div2 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .div3 {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .div4 {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+  .articleTitle {
+    padding: 0 20px;
+    font-size: 80px;
+  }
+  .sections {
+    padding: 0 10px;
+  }
+
+  .collectionTypes > li > img {
+    width: 300px;
+    height: 500px;
+  }
+  .dessertTypes > li > img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+  }
+}
+@media only screen and (min-width: 1127px) and (max-width: 1550px) {
+  /* 데스크탑 그리드 상세조정 */
+  .coffeeTypes {
+    padding: 0;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 100px;
+  }
+  .div1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .div2 {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .div3 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .div4 {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+}
+@media only screen and (min-width: 1551px) {
+  /* 데스크탑 그리드 시스템 */
+  .coffeeTypes {
+    padding: 0 350px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 100px;
+    grid-row-gap: 100px;
+  }
+  .div1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .div2 {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .div3 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .div4 {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+}
+
+/* min-w1440/min-w1128/min-w950/min-w744/ min-w375 */
+/* pc:min-w:1127px 
+// tablet:min-w:361 & max-w:1126 
+// mobile:max-w:360px */
