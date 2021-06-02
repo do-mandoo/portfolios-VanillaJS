@@ -1,11 +1,13 @@
 {
   "parserOptions": {
-    "ecmaVersion": 11,
+    "ecmaVersion": 12,
     "sourceType": "module"
   },
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "es2021": true,
+    "commonjs": true
   },
   "globals": {
     "_": false
