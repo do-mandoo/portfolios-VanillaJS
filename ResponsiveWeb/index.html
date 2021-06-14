@@ -9,36 +9,43 @@
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
     />
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
   <body>
     <div class="container">
       <header class="header">
         <h1 class="a11y-hidden"></h1>
-        <a href="#"
-          ><img
+        <a href="#">
+          <!-- <img
             class="logo"
             src="./image/coffeeLuvLogo.png"
             alt="UnderPressure"
-        /></a>
-        <ul class="ulListWrap">
-          <li class="headerList"><a href="#">HOME</a></li>
-          <li class="headerList"><a href="#">COFFEE</a></li>
-          <li class="headerList"><a href="#">COLE BREW</a></li>
-          <li class="headerList"><a href="#">BAKERY</a></li>
-          <li class="headerList"><a href="#">SHOP</a></li>
-          <li class="headerList"><a href="#">LOGIN</a></li>
-        </ul>
+          /> -->
+          <i class="fas fa-coffee"></i>
+        </a>
+        <nav class="mobileView menu">
+          <!-- <div class="toggle"></div> -->
+          <ul class="ulListWrap">
+            <li class="headerList"><a href="#">HOME</a></li>
+            <li class="headerList"><a href="#">COFFEE</a></li>
+            <li class="headerList coldbrew"><a href="#">COLD BREW</a></li>
+            <li class="headerList"><a href="#">BAKERY</a></li>
+            <li class="headerList"><a href="#">SHOP</a></li>
+            <li class="headerList"><a href="#">LOGIN</a></li>
+          </ul>
+          <h2 class="a11y-hidden">메인메뉴</h2>
+          <button class="buttonNone buttonBurger" aria-label="메뉴 열기">
+            <span class="burgerBar round positionTop"></span>
+            <span class="burgerBar round positionMiddle"></span>
+            <span class="burgerBar round positionBottom"></span>
+          </button>
+        </nav>
         <button class="searchBtn"><i class="fas fa-search"></i></button>
       </header>
-      <nav class="mobileView menu">
-        <h2 class="a11y-hidden">메인메뉴</h2>
-        <button class="buttonNone buttonBurger" aria-label="메뉴 열기">
-          <span id="burgerBar round positionTop"></span>
-          <span id="burgerBar round positionMiddle"></span>
-          <span id="burgerBar round positionBottom"></span>
-        </button>
-      </nav>
       <div class="visual1">
         <h2 class="introCafee a11y-hidden">일상 속의 특별한 휴식</h2>
         <div class="introCafeeWordWrap">
@@ -88,6 +95,18 @@
               <p>More than just a Rating</p>
               <button>See Detail</button>
             </li>
+            <li class="div5">
+              <img src="./image/coffeeBean.jpg" alt />
+              <p>div5번</p>
+              <p>appleBananaOrangeKiwi</p>
+              <button>See Detail</button>
+            </li>
+            <li class="div6">
+              <img src="./image/coffeeBean.jpg" alt />
+              <p>div6번</p>
+              <p>redBlueGreenYellow</p>
+              <button>See Detail</button>
+            </li>
           </ul>
         </section>
         <article class="HMBakery">
@@ -119,11 +138,11 @@
             </li>
           </ul>
         </section>
-        <article class="FRBeans">
+        <!-- <article class="FRBeans">
           <h2 class="a11y-hidden">Freshroastedbeans</h2>
           <p class="articleTitle roastBeanTitle">FRESH<br />ROASTED BEANS</p>
-        </article>
-        <section class="sections">
+        </article> -->
+        <!-- <section class="sections">
           <h2 class="a11y-hidden">COLD BREW</h2>
           <div class="sectionWrap">
             <p class="sectionTitle">COLD BREW</p>
@@ -151,8 +170,8 @@
         <article class="CBCoffee">
           <h2 class="a11y-hidden">Coldbrewcoffee</h2>
           <p class="articleTitle coldBrewTitle">COLD BREW COFFEE</p>
-        </article>
-        <section class="sections">
+        </article> -->
+        <!-- <section class="sections">
           <h2 class="a11y-hidden">go to shop</h2>
           <div class="sectionWrap">
             <p class="sectionTitle">SHOP</p>
@@ -163,35 +182,40 @@
             <img src="./image/coffeeBean.jpg" />
             <button class="GoToBtn">Go to shop</button>
           </div>
-        </section>
+        </section> -->
       </main>
+      <div class="scrollIcon bx bxs-chevrons-up"></div>
       <footer class="footer">
         <div>
-          <img
+          <!-- <img
             class="logo"
             src="./image/coffeeLuvLogo.png"
             alt="UnderPressure"
-          />
+          /> -->
+          <i class="fas fa-coffee"></i>
         </div>
-        <ul>
-          <li>(주)주식회사/대표자:대표자</li>
-          <li>사업자:123-45-67890/통신판매:1234-한국서울-01234호</li>
-          <li>주소:서울시 서울구 서울로 123길 45</li>
-          <li>고객센터:1234-1234/ STORE@STORE.CO.KR</li>
-        </ul>
-        <ul>
-          POLICY
-          <li>이용약관</li>
-          <li>개인정보처리방침</li>
-          <li>사업자정보 확인</li>
-        </ul>
-        <ul>
-          CONTACT
-          <li>문의하기</li>
-          <li>SNS/SITE</li>
-        </ul>
+        <div class="footerUlWrap">
+          <ul>
+            <li>(주)주식회사/대표자:대표자</li>
+            <li>사업자:123-45-67890/통신판매:1234-한국서울-01234호</li>
+            <li>주소:서울시 서울구 서울로 123길 45</li>
+            <li>고객센터:1234-1234/ STORE@STORE.CO.KR</li>
+          </ul>
+          <!-- <ul>
+            POLICY
+            <li>이용약관</li>
+            <li>개인정보처리방침</li>
+            <li>사업자정보 확인</li>
+          </ul>
+          <ul>
+            CONTACT
+            <li>문의하기</li>
+            <li>SNS/SITE</li>
+          </ul> -->
+        </div>
       </footer>
     </div>
     <script src="./responsiveweb.js"></script>
+    <script src="./scrollGoToTOP.js"></script>
   </body>
 </html>

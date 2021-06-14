@@ -17,8 +17,10 @@ div {
   padding: 0;
   margin: 0;
 }
-nav {
-  display: none;
+button {
+  border: none;
+  box-shadow: none;
+  background: none;
 }
 /* 숨김 콘텐츠 */
 .a11y-hidden,
@@ -32,6 +34,9 @@ legend {
   clip: rect(0 0 0 0);
   clip: rect(0, 0, 0, 0);
 }
+/* body {
+  min-width: 631px;
+} */
 /* .mainMargin {
   padding: 0 350px;  */
 /* 처음부터 좌우 여백을 주고 시작.*/
@@ -43,12 +48,18 @@ legend {
 /* 헤더 Header */
 .header {
   width: 100%;
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px solid #cdcbcc;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   min-height: 93px;
   position: relative;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(205, 203, 204, 1) 100%,
+    rgba(32, 124, 202, 1) 101%
+  );
 }
 .header > a {
   display: inline-block;
@@ -59,15 +70,32 @@ legend {
   left: 50px;
   cursor: pointer;
 }
-.logo {
+/* .logo {
   width: 100px;
+} */
+.fa-coffee {
+  font-size: 30px;
+  text-align: center;
+  line-height: 2;
+  color: rgba(0, 0, 0, 0.6);
+}
+.mobileView {
+  display: flex;
+  justify-content: center;
 }
 .ulListWrap {
   display: flex;
+  text-align: center;
 }
 .headerList {
-  padding: 10px;
+  padding: 10px 30px;
+  margin: 0 20px;
 }
+.ulListWrap > .headerList:first-letter {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .searchBtn {
   background: none;
   position: absolute;
@@ -79,6 +107,7 @@ legend {
   padding: 10px;
   border: none;
 }
+
 /* 1번사진 Intro IMG */
 .visual1 {
   background: url('./image/coffeeCup.jpg') no-repeat center;
@@ -123,7 +152,7 @@ legend {
 /* 메인 Main Section태그 공통 */
 .sections {
   margin-bottom: 130px;
-  padding: 0 350px;
+  padding: 0 218px;
 }
 .gridSection {
   padding: 0;
@@ -225,7 +254,7 @@ hr {
 /* 3번 사진 Ul > Li로 처리함. DESSERT */
 .dessertTypes {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .dessertTypes > li > img {
   width: 343px;
@@ -243,7 +272,7 @@ hr {
 }
 
 /* 4번째 사진. fresh Roasted Beans */
-.roastBeanTitle {
+/* .roastBeanTitle {
   font-size: 100px;
   font-weight: bold;
   color: rgba(39, 121, 164, 0.9);
@@ -251,10 +280,10 @@ hr {
   position: absolute;
   right: 0px;
   bottom: 100px;
-}
+} */
 
 /* 5번째 사진. flex로 처리. cold brew collection */
-.collectionTypes {
+/* .collectionTypes {
   display: flex;
   justify-content: space-around;
   text-align: center;
@@ -262,16 +291,37 @@ hr {
 .collectionTypes > li > img {
   width: 345px;
   height: 550px;
-}
+} */
 
 /* 6번째 사진. cold brew coffee */
-.shop {
+/* .shop {
   text-align: center;
   margin-bottom: 120px;
 }
 .shop > img {
   width: 100%;
   height: 430px;
+} */
+
+/* Scroll GoTo TOP! */
+.scrollIcon {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  transform: translate3D(-50%, 0, 0);
+  font-size: 48px;
+  cursor: pointer;
+  animation: glow 4s infinite;
+  display: none;
+}
+@keyframes glow {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+    transform: translate3D(-50%, 10px, 0);
+  }
 }
 
 /* Footer 푸터 */
@@ -280,12 +330,24 @@ hr {
   background: #ccc;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 0 350px;
+  justify-content: center;
+  padding: 0 218px;
 }
-.footer > ul,
-.footer > ul > li {
+.footer > div > .fa-coffee {
+  padding: 20px;
+}
+.footerUlWrap > ul,
+.footerUlWrap > ul > li {
   color: #222;
+}
+.footerUlWrap > ul {
+  /* border: 1px solid red; */
+  margin: 0 20px;
+}
+.footerUlWrap {
+  display: flex;
+  /* justify-content: space-between; */
+  /* flex: 1; */
 }
 
 /* Grid View */
@@ -295,20 +357,76 @@ hr {
   /* left: 0;
   top: 0; */
 }
-@media only screen and (max-width: 570px) {
+
+@media only screen and (max-width: 680px) {
   /* 모바일 그리드 시스템 */
+  .container {
+    min-width: 570px;
+  }
   .header > a,
   .searchBtn {
-    position: unset;
+    position: absolute;
+    left: 50%;
   }
-  .logo {
+  .searchBtn {
+    display: none;
+  }
+  .ulListWrap {
+    display: none;
+  }
+  .ulListWrap.isAct {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: #2779a4;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .ulListWrap.isAct > .headerList {
+    margin-bottom: 40px;
+    font-size: 30px;
+    font-weight: 300;
+  }
+  .ulListWrap.isAct > .coldbrew {
+    width: unset;
+  }
+  .ulListWrap.isAct > .headerList:first-letter {
+    font-size: 35px;
+    font-weight: bold;
+  }
+  /* .toggle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: darkorange;
+    cursor: pointer;
+    z-index: 100;
+  }
+  .toggle.isAct {
+    background: darkviolet;
+    cursor: pointer;
+    position: fixed;
+    right: 40px;
+  } */
+  /* .logo {
     width: 50px;
-  }
+  } */
   .searchBtn {
     font-size: 20px;
   }
   .headerList {
-    padding: 0 7px;
+    padding: 0 5px;
+    margin: 0 3px;
+  }
+  .coldbrew {
+    width: 45px;
+  }
+  .visual1 {
+    height: 500px;
   }
   /* 모바일 메뉴 제어 버튼 */
   .buttonBurger {
@@ -324,7 +442,7 @@ hr {
     left: 0;
     height: 20%;
     width: 100%;
-    background-color: #fff;
+    background-color: #aaa;
     transition: all 200ms ease-in-out;
   }
   .round {
@@ -338,8 +456,6 @@ hr {
     transform: translateY(-50%);
   }
   .positionBottom {
-    /* bottom: 0; 
-      버거바를 애니메이션 효과를 줄 것이기 때문에 시작하는 지점을 통일. 핸들링 쉬움.*/
     top: 100%;
     transform: translateY(-100%);
   }
@@ -354,12 +470,12 @@ hr {
     top: 50%;
     transform: translateY(-50%) rotate(-45deg);
   }
-  /* */
+  /* 여기까지 모바일 제어 메뉴. 햄버거 버튼 트랜지션 */
   .firstWordWrap > p:nth-child(1) {
     font-size: 30px;
   }
   .firstWordWrap > p:nth-child(2) {
-    font-size: 60px;
+    font-size: 70px;
   }
   .secondWordWrap > p:nth-child(1) {
     text-align: left;
@@ -394,6 +510,9 @@ hr {
   .div4 {
     grid-area: 4 / 1 / 5 / 2;
   }
+  .HMBakery {
+    height: 300px;
+  }
   .articleTitle {
     padding: 0 10px;
     font-size: 60px;
@@ -424,10 +543,10 @@ hr {
   .types > li:last-child > p {
     font-size: 11px;
   }
-  .shop > img {
+  /* .shop > img {
     width: 100%;
     height: unset;
-  }
+  } */
   .coffeeTypes > li > button,
   .GoToBtn {
     background: #000;
@@ -435,8 +554,15 @@ hr {
     font-weight: 600;
     font-size: 14px;
   }
+  .scrollIcon {
+    right: -10px;
+    bottom: 20px;
+  }
   .footer {
     padding: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: end;
   }
   .footer > ul,
   .footer > ul > li {
@@ -446,20 +572,29 @@ hr {
     width: 200px;
   }
 }
-@media only screen and (min-width: 571px) and (max-width: 992px) {
+
+@media only screen and (min-width: 681px) and (max-width: 990px) {
+  /* @media only screen and (min-width: 571px) and (max-width: 990px) { */
   /* 태블릿그리드시스템 section img 세부조정 */
+  .container {
+    min-width: 633px;
+  }
   .header > a,
   .searchBtn {
     position: unset;
   }
-  .logo {
+  /* .logo {
     width: 60px;
-  }
+  } */
   .searchBtn {
     font-size: 20px;
   }
   .headerList {
     padding: 0 7px;
+    margin: 0 10px;
+  }
+  .visual1 {
+    height: 693px;
   }
   .firstWordWrap {
     line-height: 70px;
@@ -467,6 +602,30 @@ hr {
   .collectionTypes > li > img {
     width: 150px;
     height: 300px;
+  }
+  .coffeeTypes li > img {
+    width: 500px;
+    height: 200px;
+  }
+  .coffeeTypes {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 30px;
+  }
+  .div1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .div2 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .div3 {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .div4 {
+    grid-area: 4 / 1 / 5 / 2;
   }
   .dessertTypes > li > img {
     width: 150px;
@@ -476,9 +635,24 @@ hr {
   .sections {
     padding: 0 10px;
   }
+  .HMBakery {
+    height: 500px;
+  }
   .articleTitle {
     padding: 0 10px;
     font-size: 70px;
+  }
+  .footer {
+    padding: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: end;
+  }
+  .footer > div > .fa-coffee {
+    display: flex;
+  }
+  .footerUlWrap {
+    width: 700px;
   }
 }
 @media only screen and (min-width: 991px) and (max-width: 1126px) {
@@ -487,9 +661,9 @@ hr {
   .searchBtn {
     position: unset;
   }
-  .logo {
+  /* .logo {
     width: 50px;
-  }
+  } */
   .searchBtn {
     font-size: 20px;
   }
@@ -540,15 +714,34 @@ hr {
     height: 300px;
     border-radius: 50%;
   }
+  .footer {
+    padding: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: end;
+  }
 }
+
 @media only screen and (min-width: 1127px) and (max-width: 1550px) {
   /* 데스크탑 그리드 상세조정 */
+  .articleTitle {
+    padding: 0 20px;
+    font-size: 80px;
+  }
+  .sections {
+    padding: 0 10px;
+  }
+  .coffeeTypes li > img {
+    width: 329px;
+    height: 100px;
+  }
   .coffeeTypes {
     padding: 0;
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 50px;
-    grid-row-gap: 100px;
+    grid-column-gap: 20px;
+    grid-row-gap: 70px;
   }
   .div1 {
     grid-area: 1 / 1 / 2 / 2;
@@ -557,20 +750,35 @@ hr {
     grid-area: 1 / 2 / 2 / 3;
   }
   .div3 {
-    grid-area: 2 / 1 / 3 / 2;
+    grid-area: 1 / 3 / 2 / 4;
   }
   .div4 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .div5 {
     grid-area: 2 / 2 / 3 / 3;
+  }
+  .div6 {
+    grid-area: 2 / 3 / 3 / 4;
+  }
+  .footer {
+    padding: 0;
   }
 }
 @media only screen and (min-width: 1551px) {
   /* 데스크탑 그리드 시스템 */
+  .coffeeTypes li > img {
+    width: 469px;
+    height: 190px;
+  }
   .coffeeTypes {
-    padding: 0 350px;
-    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+    margin: 0 218px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 100px;
-    grid-row-gap: 100px;
+    grid-column-gap: 30px;
+    grid-row-gap: 50px;
   }
   .div1 {
     grid-area: 1 / 1 / 2 / 2;
@@ -579,10 +787,16 @@ hr {
     grid-area: 1 / 2 / 2 / 3;
   }
   .div3 {
-    grid-area: 2 / 1 / 3 / 2;
+    grid-area: 1 / 3 / 2 / 4;
   }
   .div4 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .div5 {
     grid-area: 2 / 2 / 3 / 3;
+  }
+  .div6 {
+    grid-area: 2 / 3 / 3 / 4;
   }
 }
 
@@ -590,3 +804,10 @@ hr {
 /* pc:min-w:1127px 
 // tablet:min-w:361 & max-w:1126 
 // mobile:max-w:360px */
+
+/* @media only screen and (max-width: 570px) */
+/* @media only screen and (min-width: 571px) and (max-width: 680px) */
+/* @media only screen and (min-width: 681px) and (max-width: 990px) */
+/* @media only screen and (min-width: 991px) and (max-width: 1126px)  */
+/* @media only screen and (min-width: 1127px) and (max-width: 1550px) */
+/* @media only screen and (min-width: 1551px) */
