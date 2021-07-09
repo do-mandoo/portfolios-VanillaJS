@@ -14,11 +14,11 @@ const rows = 4;
 // const $upBtn = document.querySelector('.upBtn');
 // const $downBtn = document.querySelector('.downBtn');
 // const $countNum = document.querySelector('.countNum');
-// const $putInCart = document.querySelector('.putInCart');
+// const putInCart = document.querySelector('.putInCart');
 // const $goCartPage = document.querySelector('.goCartPage');
 const $itemLists = document.querySelector('.itemLists');
 const $pagenumbers = document.querySelector('.pagenumbers');
-// const $item = document.querySelector('ltem');
+const $item = document.querySelectorAll('.item');
 
 // 금액 자리수
 // const moneyfilter = money => {
@@ -72,7 +72,40 @@ document.addEventListener('DOMContentLoaded', async () => {
     $FragmentNode.appendChild($newProductNode);
   });
   $itemLists.appendChild($FragmentNode);
-  console.log($itemLists, 'itemlists');
+
+  // 새로고침해도 localStorage에 담은 상품 개수 유지
+  const onLoadCartNumbers = () => {
+    const productNumbers = localStorage.getItem('cartNumbers');
+    if (productNumbers) {
+      document.querySelector('.itemListWrap span').textContent = productNumbers;
+    }
+  };
+
+  // 담기를 누르면 쇼핑카트 아이콘 옆에 담긴 개수 생성.
+  const cartNumbers = () => {
+    let productNumbers = localStorage.getItem('cartNumbers');
+    productNumbers = parseInt(productNumbers, 10);
+    if (productNumbers) {
+      localStorage.setItem('cartNumbers', productNumbers + 1);
+      document.querySelector('.itemListWrap span').textContent =
+        productNumbers + 1;
+    } else {
+      localStorage.setItem('cartNumbers', 1);
+      document.querySelector('.itemListWrap span').textContent = 1;
+    }
+  };
+
+  // ul안의 li개수를 childElementCount사용해서 변수로 사용.
+  // 담기버튼인 'putInCart'엘리먼트를 li개수만큼 for문을 돌려서 click이벤트를 걸어줌. => 배열 고차함수 사용해도 좋을듯
+  const ULlength = $itemLists.childElementCount;
+  const putInCart = document.querySelectorAll('.putInCart');
+  for (let i = 0; i < ULlength; i++) {
+    putInCart[i].addEventListener('click', () => {
+      cartNumbers();
+    });
+  }
+
+  onLoadCartNumbers();
 
   // 페이지네이션 pagination
   // function DisplayList(items, wrapper, rowPage, page) {
