@@ -91,6 +91,13 @@ legend {
   padding: 10px 30px;
   margin: 0 20px;
 }
+.headerList:hover {
+  /* text-decoration: underline; */
+  transform: scale(1.1);
+}
+.headerListCart > a {
+  color: #01a2ff;
+}
 .ulListWrap > .headerList:first-letter {
   font-size: 20px;
   font-weight: bold;
@@ -204,23 +211,23 @@ hr {
 .coffeeTypes > li {
   text-align: center;
 }
-.types > li {
+/* .types > li {
   padding-left: 10px;
-}
-.types > li > p:nth-child(2),
-.coffeeTypes > li > p:nth-child(2) {
+} */
+/* .types > li > p:nth-child(2), */
+.coffeeTypes > li > p:nth-child(4) {
   padding-top: 10px;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 14px;
   line-height: 20px;
-}
-.types > li > p:nth-child(3),
-.coffeeTypes > li > p:nth-child(3) {
-  font-size: 16px;
   color: rgba(0, 0, 0, 0.8);
 }
-.coffeeTypes > li > button,
-.GoToBtn {
+/* .types > li > p:nth-child(3), */
+.coffeeTypes > li > p:nth-child(5) {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+}
+/* .GoToBtn, */
+.coffeeTypes > li > .addCartBtn {
   margin-top: 30px;
   width: 220px;
   height: 40px;
@@ -229,6 +236,9 @@ hr {
   background-color: #fff;
   border: 1px solid #000;
   font-size: 14px;
+}
+.coffeeTypes > li > .addCartBtn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* 2번 사진 홈메이드베이커리 HOMEMADE BAKERY*/
@@ -487,8 +497,8 @@ hr {
     font-size: 15px;
   }
   .coffeeTypes li > img {
-    width: 430px;
-    height: 190px;
+    width: 200px;
+    height: 200px;
   }
   .coffeeTypes {
     display: grid;
@@ -547,8 +557,8 @@ hr {
     width: 100%;
     height: unset;
   } */
-  .coffeeTypes > li > button,
-  .GoToBtn {
+  /* .GoToBtn, */
+  .coffeeTypes > li > button {
     background: #000;
     color: #fff;
     font-weight: 600;
@@ -604,8 +614,8 @@ hr {
     height: 300px;
   }
   .coffeeTypes li > img {
-    width: 500px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
   }
   .coffeeTypes {
     padding: 0;
@@ -674,8 +684,8 @@ hr {
     line-height: 70px;
   }
   .coffeeTypes li > img {
-    width: 500px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
   }
   .coffeeTypes {
     padding: 0;
@@ -732,8 +742,8 @@ hr {
     padding: 0 10px;
   }
   .coffeeTypes li > img {
-    width: 329px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
   }
   .coffeeTypes {
     padding: 0;
@@ -768,8 +778,8 @@ hr {
 @media only screen and (min-width: 1551px) {
   /* 데스크탑 그리드 시스템 */
   .coffeeTypes li > img {
-    width: 469px;
-    height: 190px;
+    width: 200px;
+    height: 200px;
   }
   .coffeeTypes {
     padding: 0;

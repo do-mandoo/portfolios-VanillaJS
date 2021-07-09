@@ -1,0 +1,116 @@
+/* 공통사항 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+ul,
+li {
+  list-style: none;
+}
+p,
+div {
+  padding: 0;
+  margin: 0;
+}
+button {
+  border: none;
+  box-shadow: none;
+  background: none;
+}
+/* 숨김 콘텐츠 */
+.a11y-hidden,
+legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  clip-path: polygon(0 0, 0 0, 0 0);
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+}
+/* body {
+  min-width: 631px;
+} */
+/* .mainMargin {
+  padding: 0 350px;  */
+/* 처음부터 좌우 여백을 주고 시작.*/
+/* background: #bbb; */
+/* } */
+.container {
+  width: 100%;
+}
+/* 헤더 Header */
+.header {
+  width: 100%;
+  border-bottom: 1px solid #cdcbcc;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 93px;
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(205, 203, 204, 1) 100%,
+    rgba(32, 124, 202, 1) 101%
+  );
+}
+.header > a {
+  display: inline-block;
+  padding: 13px;
+  margin: 0;
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  cursor: pointer;
+}
+/* .logo {
+  width: 100px;
+} */
+.fa-coffee {
+  font-size: 30px;
+  text-align: center;
+  line-height: 2;
+  color: rgba(0, 0, 0, 0.6);
+}
+.mobileView {
+  display: flex;
+  justify-content: center;
+}
+.ulListWrap {
+  display: flex;
+  text-align: center;
+}
+.headerList {
+  padding: 10px 30px;
+  margin: 0 20px;
+}
+.headerList:hover {
+  /* text-decoration: underline; */
+  transform: scale(1.1);
+}
+.headerListCart > a {
+  color: #01a2ff;
+}
+.ulListWrap > .headerList:first-letter {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.searchBtn {
+  background: none;
+  position: absolute;
+  top: 15px;
+  right: 50px;
+  font-size: 30px;
+  font-weight: lighter;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+}

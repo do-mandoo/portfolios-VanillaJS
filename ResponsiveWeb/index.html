@@ -30,12 +30,16 @@
         <nav class="mobileView menu">
           <!-- <div class="toggle"></div> -->
           <ul class="ulListWrap">
-            <li class="headerList"><a href="#">HOME</a></li>
-            <li class="headerList"><a href="#">COFFEE</a></li>
-            <li class="headerList coldbrew"><a href="#">COLD BREW</a></li>
-            <li class="headerList"><a href="#">BAKERY</a></li>
-            <li class="headerList"><a href="#">SHOP</a></li>
-            <li class="headerList"><a href="#">LOGIN</a></li>
+            <li class="headerList headerListHome">
+              <a href="index.html">HOME</a>
+            </li>
+            <li class="headerList headerListCoffee"><a href="#">COFFEE</a></li>
+            <!-- <li class="headerList coldbrew"><a href="#">COLD BREW</a></li>
+            <li class="headerList"><a href="#">BAKERY</a></li> -->
+            <li class="headerList headerListCart">
+              <a href="cart.html">CART</a><span>0</span>
+            </li>
+            <li class="headerList headerListLogin"><a href="#">LOGIN</a></li>
           </ul>
           <h2 class="a11y-hidden">메인메뉴</h2>
           <button class="buttonNone buttonBurger" aria-label="메뉴 열기">
@@ -72,40 +76,52 @@
           </div>
           <ul class="coffeeTypes">
             <li class="div1">
-              <img src="./image/coffeeBean.jpg" alt />
+              <img src="./image/kenya케냐원두.jpg" alt />
+              <h3 class="beanName">케냐</h3>
+              <h4 class="price">18,000원</h4>
               <p>커피 본연의 맛을 찾아</p>
               <p>In search of natural born Sweetness</p>
-              <button>See Detail</button>
+              <button class="addCartBtn">Add Cart</button>
             </li>
             <li class="div2">
-              <img src="./image/coffeeBean.jpg" alt />
+              <img src="./image/에티오피아원두.jpg" alt />
+              <h3 class="beanName">에티오피아</h3>
+              <h4 class="price">18,000원</h4>
               <p>조화로운 열의 전달</p>
               <p>Harmonious heat Delivery</p>
-              <button>See Detail</button>
+              <button class="addCartBtn">Add Cart</button>
             </li>
             <li class="div3">
-              <img src="./image/coffeeBean.jpg" alt />
+              <img src="./image/콜롬비아원두.jpg" alt />
+              <h3 class="beanName">에티오콜롬비아</h3>
+              <h4 class="price">18,000원</h4>
               <p>블랜드? 상상만 했던 그 맛!</p>
               <p>Blend : Mix & Match</p>
-              <button>See Detail</button>
+              <button class="addCartBtn">Add Cart</button>
             </li>
             <li class="div4">
-              <img src="./image/coffeeBean.jpg" alt />
+              <img src="./image/kenya케냐원두.jpg" alt />
+              <h3 class="beanName">케냐</h3>
+              <h4 class="price">18,000원</h4>
               <p>로스팅 : 달콤함의 발현</p>
               <p>More than just a Rating</p>
-              <button>See Detail</button>
+              <button class="addCartBtn">Add Cart</button>
             </li>
             <li class="div5">
-              <img src="./image/coffeeBean.jpg" alt />
+              <img src="./image/에티오피아원두.jpg" alt />
+              <h3 class="beanName">에티오피아</h3>
+              <h4 class="price">18,000원</h4>
               <p>div5번</p>
               <p>appleBananaOrangeKiwi</p>
-              <button>See Detail</button>
+              <button class="addCartBtn">Add Cart</button>
             </li>
             <li class="div6">
-              <img src="./image/coffeeBean.jpg" alt />
+              <img src="./image/콜롬비아원두.jpg" alt />
+              <h3 class="beanName">콜롬비아</h3>
+              <h4 class="price">18,000원</h4>
               <p>div6번</p>
               <p>redBlueGreenYellow</p>
-              <button>See Detail</button>
+              <button class="addCartBtn">Add Cart</button>
             </li>
           </ul>
         </section>
