@@ -1,6 +1,5 @@
 // data 배열로 담음
 let productItems = [];
-// const mycartItmes = [];
 const $liTemplate = document.getElementById('product-item-li').content
   .firstElementChild;
 
@@ -31,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     try {
       const res = await fetch('http://localhost:4000/api/appPosts/myproduct');
       productItems = await res.json();
-      console.log(productItems, 'productItems');
+      console.log(productItems, 'productItems1');
     } catch (e) {
       console.log(e, '프로덕트에러남ㅎ');
     }

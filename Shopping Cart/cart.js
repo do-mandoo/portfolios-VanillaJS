@@ -5,6 +5,8 @@ const $cartLiTemplate = document.getElementById('cart-item-li').content
 
 // DOM
 // const $goListPage = document.querySelector('.goListPage');
+
+const $listContainer = document.querySelector('.listContainer');
 const $allSelect = document.querySelector('.allSelect');
 const $allDelete = document.querySelector('.allDelete');
 const $itemCheckBox = document.querySelector('.itemCheckBox');
@@ -20,6 +22,7 @@ const $totalCost = document.querySelector('.totalCost');
 
 //-------
 // 카트에 담긴 상품들 랜더링.
+
 document.addEventListener('DOMContentLoaded', async () => {
   const fetchItems = async () => {
     try {
@@ -80,6 +83,10 @@ const changeCartNumber = async e => {
   if (!(e.target.matches('.cartDownBtn') || e.target.matches('.cartUpBtn')))
     return;
 
+  // const onLoadCartProductNumbers = () => {
+  //   const cartUpDownNumbers = localStorage.getItem('cartUpDownBtn');
+  // };
+
   const $targetLi = e.target.closest('li');
   const $number = $targetLi.querySelector('.cartCountNum');
   const $downBtn = $targetLi.querySelector('.cartDownBtn');
@@ -89,6 +96,7 @@ const changeCartNumber = async e => {
   console.log(cartId, 49305);
   const number = +$number.textContent;
   const cost = +$cost.textContent;
+
   if (e.target.matches('.cartDownBtn')) {
     $number.textContent = number - 1;
   } else {
@@ -115,10 +123,8 @@ $cartItemLists.addEventListener('click', changeCartNumber);
 // 각 리스트 삭제
 const cartListDelete = async e => {
   if (!e.target.matches('.cartDeletItem')) return;
-  // const cartId = e.target.closest('li').id;
-  // console.log(cartId, 'cart_id');
-  const cartlist = e.target.closest('li').classList[1];
-  console.log(cartlist, 'cartlist cartId');
+  const cartlist = e.target.closest('li').classList[1]; // classname으로 'cartItem'이랑 백엔드에서 자동으로 생성해주는 번호'cartId'가 있는데, 그 번호를 잡는 것.
+  // console.log(cartlist, 'cartlist cartId');
 
   const option = {
     method: 'DELETE'
@@ -127,16 +133,10 @@ const cartListDelete = async e => {
     `http://localhost:4000/api/appPosts/mycart/delete/${cartlist}`,
     option
   );
-  // console.log(res.json());
-  // cartItems = await res;
-  console.log('akjdf');
   cartItems = res;
-  // cartItems = await res();
-  console.log(cartItems, '삭제후cartItems');
+  // console.log(cartItems, '삭제후cartItems');
+  // console.log(e.path, 'e.path');
   const el = e.path[2];
-  // console.log(el, 'el');
-  // console.log(cartItems, 'cartitems');
-  // console.log($cartItemLists.firstElementChild, 338383);
   $cartItemLists.removeChild(el);
 
   // 리스트 삭제되면 다시 계산해서 총 합계 나타남.
@@ -147,6 +147,7 @@ const cartListDelete = async e => {
       cartItems.reduce((acc, cur) => acc + cur.price * cur.numberOfCart, 0)
     );
   };
+  console.log(allCosts(), 'allcost');
   $totalCost.textContent = allCosts();
 };
 
@@ -160,3 +161,43 @@ $cartItemLists.addEventListener('click', cartListDelete);
 // };
 
 // $cartItemLists.addEventListener('click', eachListCostTotal());
+
+// 전체 삭제
+const itemAllDelete = e => {
+  if (!e.target.matches('.allDelete')) return;
+  cartItems.splice(0);
+  // const option = {
+  //   method: 'DELETE'
+  // };
+  // [...cartItems].forEach(item => {
+  //   console.log(item);
+  //   const res = fetch(
+  //     `http://localhost:4000/api/appPosts/mycart/delete/${item.cartId}`,
+  //     option
+  //   );
+  //   cartItems = res;
+  //   $cartItemLists.removeChild(item.id);
+  // });
+
+  console.log(cartItems, 'cartItems전삭');
+
+  // const itemlength = cartItems.length;
+  // for (let i = 0; i < itemlength; i++) {
+  //   const li = e.target.closest('button').nextElementSibling.children[i]
+  //     .classList[1];
+  //   console.log(li);
+  // }
+
+  // const ullist = e.target.closest('button').nextElementSibling.children;
+  // console.log(ullist, 'ullist');
+  // console.log(cartItems.length, 'cartitemlistis');
+  // const maplistcartId = cartItems.map(item => item.cartId);
+  // for (let i = 0; i < cartItems.length; i++) {
+  //   cartItems.children[i].className;
+  // }
+  // maplistcartId.forEach(cartId => {
+  //   console.log(cartId, 'foreachcartId');
+  // });
+};
+
+$listContainer.addEventListener('click', itemAllDelete);
