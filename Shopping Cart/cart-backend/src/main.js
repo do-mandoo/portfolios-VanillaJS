@@ -7,7 +7,7 @@ import cors from '@koa/cors';
 // src>api>index.js가져오기
 import api from './api';
 
-require('dotenv').config();
+require('dotenv').config(); // .env파일에서 환경변수 불러오기
 
 // 비구조화 할당을 통해 process.env 내부 값에 대한 레퍼런스 만들기
 const { PORT, MONGO_URI } = process.env;
@@ -42,7 +42,7 @@ app.use(bodyParser());
 app.use(router.routes()).use(router.allowedMethods());
 
 // PORT가 지정되어 있지 않다면 4000을 사용
-const port = PORT || 4000;
+const port = PORT || 4000; // 4000으로 지정해놨음.
 app.listen(port, () => {
   console.log('Listening on port', port);
 });

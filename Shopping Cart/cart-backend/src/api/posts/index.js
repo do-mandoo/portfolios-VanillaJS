@@ -22,6 +22,9 @@ appPosts.delete(
   postsCtrl.remove
 );
 
+// // 전체 데이터 삭제는 어떻게 하는거지?
+// appPosts.delete('/mycart/delete', postsCtrl.adelete);
+
 // 특정 데이터 수정
 appPosts.patch('/mycart/modify/:id', postsCtrl.checkObjectId, postsCtrl.update);
 

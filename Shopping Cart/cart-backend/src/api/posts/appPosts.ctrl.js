@@ -187,6 +187,22 @@ export const remove = async ctx => {
     ctx.throw(500, e);
   }
 };
+// /* 전체 포스트 삭제는 구현하지 않는 기능인걸까?
+// DELETE /api/mycart/delete/:id */
+// export const adelete = async ctx => {
+//   const { id } = ctx.params;
+//   console.log(ctx.params, 'params');
+//   try {
+//     await Cart.find({ cartId: id }).exec();
+//     const cart = await Cart.find().exec();
+//     console.log(cart, 'cart311');
+//     ctx.body = cart;
+//     console.log(ctx.body, 'ctx.body195843075');
+//     ctx.status = 204; // No Content(성공하기는 했지만 응답할 데이터는 없음)
+//   } catch (e) {
+//     ctx.throw(500, e);
+//   }
+// };
 
 /* 포스트 수정(교체) Cart
 PATCH /api/mycart/modify/:id
